@@ -1,0 +1,1 @@
+Collab whiteboard project with authorization using passportjs
