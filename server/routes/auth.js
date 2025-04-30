@@ -50,22 +50,40 @@ authRouter.post('/login', function(req, res, next) {
 
 
 passport.serializeUser(function(user, cb) {
-    process.nextTick(function() {
-      cb(null, { id: user.id, username: user.username });
+  process.nextTick(function() {
+    cb(null, { id: user.id, username: user.username }); // Store the user ID and username in the session
+  });
+});
+  
+passport.deserializeUser(async function(user, cb) {
+  try {
+    // Retrieve the full user from the database
+    const fullUser = await prisma.user.findUnique({ where: { id: user.id } });
+    cb(null, fullUser); // This will store the user object in req.user
+  } catch (err) {
+    cb(err);
+  }
+});
+
+  // logout
+  authRouter.post('/auth/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).send("Failed to log out");
+      }
+      res.clearCookie('connect.sid'); // Clear session cookie
+      res.send('Logged out');
     });
   });
   
-  passport.deserializeUser(function(user, cb) {
-    process.nextTick(function() {
-      return cb(null, user);
-    });
-  });
+  
 
-  // logout
-  authRouter.post('/logout', function(req, res, next) {
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      res.redirect('/');
-    });
+  authRouter.get('/status', function(req, res) {
+    if (req.isAuthenticated()) {
+      return res.json({ user: req.user }); // Send user data if logged in
+    } else {
+      return res.status(401).json({ message: 'Not authenticated' });
+    }
   });
+  
 export default authRouter;
