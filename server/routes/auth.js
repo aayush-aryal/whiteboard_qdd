@@ -66,13 +66,11 @@ passport.deserializeUser(async function(user, cb) {
 });
 
   // logout
-  authRouter.post('/auth/logout', (req, res) => {
-    req.session.destroy((err) => {
-      if (err) {
-        return res.status(500).send("Failed to log out");
-      }
-      res.clearCookie('connect.sid'); // Clear session cookie
-      res.send('Logged out');
+  authRouter.post('/logout', (req, res) => {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.clearCookie('connect.sid')
+      res.send({message:"Logged out sucessfully"});
     });
   });
   
