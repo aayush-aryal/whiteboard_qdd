@@ -28,7 +28,6 @@ A full-stack collaborative whiteboard application where multiple users can draw 
 
 - Node.js (v16+)
 - PostgreSQL instance
-- Optional: Docker
 
 ### Installation
 
