@@ -183,8 +183,8 @@ const Board = ({user, setUser}) => {
           onMouseUp={handleMouseUp}
           style={{
             cursor: isEraser
-              ? 'url(eraser.png)16 16, pointer'
-              : 'crosshair',
+              ? 'url(er.png)16 16, pointer'
+              : 'url(content.png) 8 15, pointer',
             border: "2px solid #ddd",
             borderRadius: "1rem",
             marginTop: "1rem"
