@@ -38,29 +38,34 @@ A full-stack collaborative whiteboard application where multiple users can draw 
 git clone https://github.com/yourusername/whiteboard-app.git
 cd whiteboard-app
 
+```
+
 2. Install dependencies:
 
 ```bash
 # Backend
 cd server
 npm install
-
 # Frontend
 cd ../client
 npm install
+```
 
-3.Configure environtment variables:
+3. Configure environtment variables:
 
 ```bash
 DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/YOUR_DB
 SESSION_SECRET=your-secret-key
 
+``` 
 4. Setup the database 
 
 ```bash 
 cd server
 npx prisma generate
 npx prisma migrate dev --name init
+
+```
 
 6. Run the app 
 
@@ -71,3 +76,5 @@ npm run dev
 # In a separate terminal, run the frontend
 cd ../client
 npm run dev
+
+```
