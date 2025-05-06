@@ -2,16 +2,16 @@
 
 A full-stack collaborative whiteboard application where multiple users can draw together in real time, with authentication, room-based collaboration, and persistent session support.
 
-## 🚀 Features
+## Features
 
-- 🎨 Draw & erase on a canvas using Konva
-- 🤝 Real-time multi-user collaboration with Socket.IO & rooms
-- 🔐 User authentication with Passport.js
-- 🗃️ PostgreSQL with Prisma ORM for database operations
-- 🧠 Express.js backend with RESTful API endpoints
-- 🖌️ Tailwind CSS for clean UI design
+- Draw & erase on a canvas using Konva
+- Real-time multi-user collaboration with Socket.IO & rooms
+- User authentication with Passport.js
+- PostgreSQL with Prisma ORM for database operations
+- Express.js backend with RESTful API endpoints
+- Tailwind CSS for clean UI design
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Frontend | Backend | Realtime | Database | Auth |
 |----------|---------|----------|----------|------|
@@ -19,10 +19,10 @@ A full-stack collaborative whiteboard application where multiple users can draw 
 | Konva    | Prisma  |          |          |         |
 | Tailwind CSS |     |          |          |         |
 
-## 📷 Demo
+## Demo
 
 
-## 🧪 Getting Started
+## Getting Started
 
 ### Prerequisites
 
